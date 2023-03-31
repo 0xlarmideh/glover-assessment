@@ -2,8 +2,8 @@
   <div class=" bg-white p-[14px] pb-[18px] rounded-[10px]">
     <div class="relative flex flex-col gap-[8px]">
       <img
-        src="../assets/1.png"
-        class="rounded-[10px] w-[100%] object-fill"
+        :src="source"
+        class="rounded-[10px] w-[100%] h-[220px] object-cover"
         alt="event-image"
       />
       <ParagraphBlack class="w-[70%]" >{{ title ? title : "Event" }}</ParagraphBlack>
@@ -44,7 +44,7 @@ export default {
     Icon,
     ParagraphBlack
 },
-  props: ["title", "location", "link", "date", ],
+  props: ["title", "location", "link", "date", "source" ],
   methods: {
     formatDate(date) {
   const options = {   day: 'numeric', month: 'long' }
