@@ -1,11 +1,11 @@
 <template>
   <div class=" bg-white p-[14px] pb-[18px] rounded-[10px]">
-    <img
-      src="../assets/1.png"
-      class="rounded-[10px] w-[100%] object-fill"
-      alt="event-image"
-    />
     <div class="relative flex flex-col gap-[8px]">
+      <img
+        src="../assets/1.png"
+        class="rounded-[10px] w-[100%] object-fill"
+        alt="event-image"
+      />
       <ParagraphBlack class="w-[70%]" >{{ title ? title : "Event" }}</ParagraphBlack>
       <div
         class="absolute bottom-[2rem] right-[0] px-[8px] py-[8px] rounded-[10px] bg-orange-100 font-medium"
