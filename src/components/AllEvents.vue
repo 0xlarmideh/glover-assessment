@@ -1,6 +1,6 @@
 <template>
   <ParagraphBlack class="font-semibold text-black text-[18px] my-6">All Events</ParagraphBlack>
-  <div class="grid grid-cols-4 gap-4">
+  <div class="grid grid-cols-4 max-lg:grid-cols-2 max-sm:grid-cols-1 gap-4 mb-[2rem]">
     <div v-for="event in Events" :key="event.id">
       <EventCard
         :title="event.title"

@@ -93,9 +93,9 @@ export default {
     // Function to update window width, recalculate perPage and totalPages
     updateScreenWidth() {
       this.screenWidth = window.innerWidth;
-      this.screenWidth < 768 ? (this.perPage = 1) : (this.perPage = 2);
+      this.screenWidth < 900 ? (this.perPage = 1) : (this.perPage = 2);
       
-      if (this.totalPages > 2 && this.screenWidth >= 768) {
+      if (this.totalPages > 2 && this.screenWidth >= 900) {
         this.currentPage = 2;
       }
       this.totalPages = Math.ceil(this.featuredEvents.length / this.perPage);

@@ -55,11 +55,23 @@ export default {
 
 <style>
 #app {
-  /* font-family: Avenir, Helvetica, Arial, sans-serif; */
   font-family: "BR Firma", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #f8f9fb;
   padding: 4rem 7rem;
+}
+@media screen and (max-width: 1280px){
+    /*Tablets [601px -> 1200px]*/
+    #app {
+      padding: 4rem 3rem
+    }
+}
+
+@media screen and (max-width: 768px){
+    /*Tablets [601px -> 1200px]*/
+    #app {
+      padding: 4rem 1rem
+    }
 }
 </style>
