@@ -42,7 +42,7 @@ export default {
   },
   computed: {
       images: function() {
-        const x = require.context('@/assets/placeholders/', true, /\.png$/)
+        const x = require.context('@/assets/placeholders/', true, /\.jpg$/)
         return this.importAll(x)
       }
     },
