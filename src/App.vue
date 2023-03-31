@@ -1,9 +1,6 @@
 <template>
   <Nav />
-  <div class="loading-spinner" v-if="loading">
-      <span class="loader"></span>
-    </div>
-  <main v-else>
+  <main>
     <input
       class="border-stroke border-[1px] w-[600px] max-md:w-full rounded-[10px] mt-6 mb-12 p-2 pl-12"
       type="text"
@@ -35,7 +32,6 @@ export default {
     return {
       searchTerm: "",
       AllEvents: userData,
-      loading: true,
     };
   },
   computed: {
@@ -54,11 +50,6 @@ export default {
 
     },
   },
-  mounted () {
-    this.$nextTick(() => {
-        this.loading = false
-      })
-    }
 };
 </script>
 
