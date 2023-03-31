@@ -3,7 +3,7 @@
     <div class="relative flex flex-col gap-[8px]">
       <img
         :src="source"
-        class="rounded-[10px] w-[100%] h-[220px] object-cover"
+        class="rounded-[10px] w-[100%] h-[270px] object-cover"
         alt="event-image"
       />
       <ParagraphBlack class="w-[70%]" >{{ title ? title : "Event" }}</ParagraphBlack>
