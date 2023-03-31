@@ -9,6 +9,7 @@
           :location="event.venue.city"
           :index="index + 1"
           :date="event.starts_at"
+          :source="selectImage(images[index+currentPage])"
         />
       </div>
     </div>
@@ -99,6 +100,14 @@ export default {
       }
       this.totalPages = Math.ceil(this.featuredEvents.length / this.perPage);
     },
+    importAll(r) {
+        return r.keys().map(x =>
+          x.substring(2, x.length) // remove "./" from file names
+        )
+      },
+      selectImage(image) {
+        return require('@/assets/john-legend/' + image)
+      }
   },
   computed: {
     // Function to create a computed data for our Carousel display
@@ -107,6 +116,10 @@ export default {
       const endIndex = startIndex + this.perPage;
       return this.featuredEvents.slice(startIndex, endIndex);
     },
+    images: function() {
+        const x = require.context('@/assets/john-legend/', true, /\.jpg$/)
+        return this.importAll(x)
+      }
   },
   mounted() {
     // Call all function on mount
