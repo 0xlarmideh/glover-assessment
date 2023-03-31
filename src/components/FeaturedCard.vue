@@ -2,7 +2,7 @@
   <div class="relative bg-white p-[14px] pb-[18px] rounded-[10px]">
     <div class="flex flex-col gap-[12px]">
       <img
-        src="../assets/john-legend.jpg"
+        :src="source"
         class="rounded-[10px] w-[100%] h-[300px] object-cover"
         alt="event-image"
       />
@@ -59,7 +59,7 @@ export default {
     ParagraphBlack,
     Icon,
   },
-  props: ["title", "location", "date", "link", 'id', "index"],
+  props: ["title", "location", "date", "link", 'id', "index", "source"],
   methods: {
     formatDate(date) {
   const options = {   day: 'numeric', month: 'long', year: 'numeric' }

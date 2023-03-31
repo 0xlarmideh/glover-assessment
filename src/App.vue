@@ -1,12 +1,16 @@
 <template>
   <Nav />
-  <main>
-    <input
-      class="border-stroke border-[1px] w-[600px] max-md:w-full rounded-[10px] mt-6 mb-12 p-2 pl-12"
+  <main >
+    <div class="relative">
+      <label class="absolute inset-y-[11px] left-0 pl-4"><Icon icon="ri:search-2-line" color="#6c757d" width="20" :horizontalFlip="false" /></label>
+      <input
+      class=" border-stroke border-[1px] focus:outline-none focus:border-cyan-300 focus:border-[2px] w-[500px] max-md:w-full rounded-[10px] mb-12 p-2 pl-12"
       type="text"
       placeholder="Search"
       v-model="searchTerm"
-    />
+    /></div>
+    
+    
     <FeaturedEvents />
     <AllEvents :Events="handleFilter" />
   </main>
@@ -18,6 +22,7 @@ import AllEvents from "./components/AllEvents.vue";
 import { Button } from "./index.js";
 import Nav from "./components/Nav.vue";
 import userData from "./data.json";
+import { Icon } from "@iconify/vue";
 
 export default {
   name: "App",
@@ -26,6 +31,7 @@ export default {
     FeaturedEvents,
     Nav,
     AllEvents,
+    Icon
   },
 
   data() {
