@@ -8,30 +8,31 @@
           :link="event.url"
           :location="event.venue.city"
           :index="index + 1"
+          :date="event.starts_at"
         />
       </div>
     </div>
     <button
       v-if="currentPage !== 1"
-      class="absolute left-[-12px] bottom-[50%] p-[2px] rounded-full bg-white shadow"
+      class="absolute left-[-15px] bottom-[50%] p-[2px] rounded-full bg-white shadow"
       @click="currentPage--"
     >
       <Icon
         icon="material-symbols:arrow-forward-ios"
         :horizontalFlip="true"
-        color="#6c757d"
-        width="24"
+        color="#372AA4"
+        width="30"
       />
     </button>
     <button
       v-if="currentPage !== totalPages"
-      class="absolute right-[-12px] bottom-[50%] p-[2px] rounded-full bg-white shadow"
+      class="absolute right-[-15px] bottom-[50%] p-[2px] rounded-full bg-white shadow"
       @click="currentPage++"
     >
       <Icon
         icon="material-symbols:arrow-forward-ios"
-        color="#6c757d"
-        width="24"
+        color="#372AA4"
+        width="30"
       />
     </button>
   </div>
@@ -74,8 +75,6 @@ export default {
 
         // Calculate totalPages
         this.totalPages = Math.ceil(this.featuredEvents.length / this.perPage);
-
-        console.log(this.featuredEvents);
       } catch (error) {
       } finally {
         // set loading to false after fetch data

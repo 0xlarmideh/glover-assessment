@@ -59,7 +59,7 @@
   "id": 8,
   "artist": "Zara",
   "location": "Póvoa de Santo António",
-  "img_url": "http://dummyimage.com/727x444.png/cc0000/ffffff",
+  "img_url": "../assets/7.png",
   "url": "https://csmonitor.com/magnis/dis/parturient/montes.jpg?donec=donec&dapibus=posuere&duis=metus&at=vitae&velit=ipsum&eu=aliquam&est=non&congue=mauris&elementum=morbi&in=non&hac=lectus&habitasse=aliquam&platea=sit&dictumst=amet&morbi=diam&vestibulum=in&velit=magna&id=bibendum&pretium=imperdiet&iaculis=nullam&diam=orci&erat=pede&fermentum=venenatis&justo=non&nec=sodales&condimentum=sed&neque=tincidunt&sapien=eu&placerat=felis",
   "date": "7/18/2022",
   "title": "Purple Ball"

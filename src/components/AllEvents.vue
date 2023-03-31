@@ -6,8 +6,7 @@
         :title="event.title"
         :link="event.url"
         :location="event.location"
-        :index="event.id"
-        :source="event.img_url"
+        :date="event.date"
       />
     </div>
   </div>
@@ -30,7 +29,7 @@ export default {
       loading: true,
     };
   },
-  props: ["Events"]
+  props: ["Events"],
 };
 </script>
 

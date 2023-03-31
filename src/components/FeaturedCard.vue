@@ -1,5 +1,5 @@
 <template>
-  <div class="relative bg-white p-[14px] rounded-[10px]">
+  <div class="relative bg-white p-[14px] pb-[18px] rounded-[10px]">
     <div class="flex flex-col gap-[12px]">
       <img
         src="../assets/john-legend.jpg"
@@ -21,7 +21,7 @@
             </div>
             <div class="flex gap-[10px] items-center">
               <Icon icon="uiw:date" color="#6c757d" />
-              <Paragraph v-if="date">{date}</Paragraph>
+              <Paragraph v-if="date">{{formatDate(date)}}</Paragraph>
               <Paragraph v-else>31st Oct, 2021</Paragraph>
             </div>
           </div>
@@ -60,6 +60,12 @@ export default {
     Icon,
   },
   props: ["title", "location", "date", "link", 'id', "index"],
+  methods: {
+    formatDate(date) {
+  const options = {   day: 'numeric', month: 'long', year: 'numeric' }
+  return new Date(date).toLocaleDateString('en-GB', options)
+},
+  }
 };
 </script>
 
