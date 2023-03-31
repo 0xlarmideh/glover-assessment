@@ -1,14 +1,14 @@
 <template>
-  <div class=" bg-white p-[20px] rounded-[10px]">
+  <div class=" bg-white p-[14px] rounded-[10px]">
     <div class="relative flex flex-col gap-[8px]">
       <img
-        :src="source"
-        class="rounded-[10px]"
+        src="../assets/Placeholder.png"
+        class="rounded-[10px]  object-cover"
         alt="event-image"
       />
-      <div class="font-bold text-black">{{ title ? title : "Event" }}</div>
+      <ParagraphBlack class="w-[70%]" >{{ title ? title : "Event" }}</ParagraphBlack>
       <div
-        class="absolute bottom-[2rem] right-[20px] px-[16px] py-[10px] rounded-[10px] bg-orange-100 font-semibold"
+        class="absolute bottom-[2rem] right-[0] px-[8px] py-[8px] rounded-[10px] bg-orange-100 font-semibold"
         ><Paragraph class="text-[#FF6A2C]" v-if="date">{date}</Paragraph>
       <Paragraph class="text-[#FF6A2C]" v-else>31 Oct</Paragraph></div
       >
@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import { Button, Paragraph } from "../index.js";
+import { Button, Paragraph, ParagraphBlack } from "../index.js";
 import { Icon } from "@iconify/vue";
 
 
@@ -43,7 +43,8 @@ export default {
     Button,
     Paragraph,
     Icon,
-  },
+    ParagraphBlack
+},
   props: ["title", "location", "link", "date", "source"],
 };
 </script>

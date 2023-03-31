@@ -1,13 +1,13 @@
 <template>
-  <div class="relative bg-white p-[20px] rounded-[10px]">
+  <div class="relative bg-white p-[14px] rounded-[10px]">
     <div class="flex flex-col gap-[12px]">
       <img
-        src="../assets/Placeholder.png"
-        class="rounded-[10px]"
+        src="../assets/john-legend.jpg"
+        class="rounded-[10px] w-[100%] h-[300px] object-cover"
         alt="event-image"
       />
-      <Paragraph class="font-bold text-black" v-if="title">{{ title }} in {{ location }} {{ [index] }}</Paragraph>
-      <Paragraph class="font-bold text-black" v-else>Event {id}</Paragraph>
+      <ParagraphBlack v-if="title">{{ title }} in {{ location }} {{ [index] }}</ParagraphBlack>
+      <ParagraphBlack v-else>Event {id}</ParagraphBlack>
       <div class="flex justify-between items-end">
         <div class="flex flex-col gap-[12px]">
           <div class="flex gap-[30px]">
@@ -48,7 +48,7 @@
 </template>
 
 <script>
-import { Button, Paragraph } from "../index.js";
+import { Button, Paragraph, ParagraphBlack } from "../index.js";
 import { Icon } from "@iconify/vue";
 
 export default {
@@ -56,6 +56,7 @@ export default {
   components: {
     Button,
     Paragraph,
+    ParagraphBlack,
     Icon,
   },
   props: ["title", "location", "date", "link", 'id', "index"],

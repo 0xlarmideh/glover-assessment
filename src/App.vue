@@ -1,51 +1,65 @@
 <template>
-  <!-- <h1 class="text-slate-500 text-[60px]">TEST</h1> -->
-    <!-- <Button link="#">Buy Tickets</Button> -->
-    <Nav />
-    <main>
-      <input class="border-slate-300 rounded-[10px] p-2" type="text" placeholder="Search events" v-model="searchTerm">
-      <FeaturedEvents />
-      <AllEvents :events="filteredEvents" />
-      <EventCard />
-    </main>
+  <Nav />
+  <main>
+    <input
+      class="border-stroke border-[1px] w-[600px] max-md:w-full rounded-[10px] mt-6 mb-12 p-2 pl-12"
+      type="text"
+      placeholder="Search"
+      v-model="searchTerm"
+    />
+    <FeaturedEvents />
+    <AllEvents :Events="handleFilter" />
+  </main>
 </template>
 
 <script>
-import EventCard from './components/EventCard.vue';
-import FeaturedEvents from './components/FeaturedEvents.vue';
-import AllEvents from './components/AllEvents.vue';
-import {Button} from './index.js';
+import FeaturedEvents from "./components/FeaturedEvents.vue";
+import AllEvents from "./components/AllEvents.vue";
+import { Button } from "./index.js";
 import Nav from "./components/Nav.vue";
-import userData from "./data.json"
+import userData from "./data.json";
 
-// import EventCard from './components/EventCard.vue';
 export default {
-  name: 'App',
+  name: "App",
   components: {
     Button,
     FeaturedEvents,
     Nav,
     AllEvents,
-    EventCard
-},
-data () {
-  return {
-    AllEvents: userData,
-    filteredEvents: userData
+  },
 
-}},
+  data() {
+    return {
+      searchTerm: "",
+      AllEvents: userData,
+    };
+  },
+  computed: {
+    handleFilter() {
+      // If the search term is empty, return all events
+      if (!this.searchTerm) {
+        return this.AllEvents;
+      }
+      // Filter the events based on the search term
+      return this.AllEvents.filter((event) => {
+        return event.title
+          .toLowerCase()
+          .includes(this.searchTerm.toLowerCase());
+          
+      });
 
-}
+    },
+  },
+};
 </script>
+
 <style>
 #app {
   /* font-family: Avenir, Helvetica, Arial, sans-serif; */
-  font-family: 'BR Firma', sans-serif;
+  font-family: "BR Firma", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #f8f9fb;
   padding: 4rem 7rem;
-
 }
 </style>
-

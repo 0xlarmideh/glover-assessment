@@ -5,3 +5,5 @@ export { default as Button } from "@/components/Button.vue";
 export { default as Heading } from "@/components/Typography/Heading.vue";
 
 export { default as Paragraph } from "@/components/Typography/Paragraph.vue";
+export { default as ParagraphBlack } from "@/components/Typography/ParagraphBlack.vue";
+
