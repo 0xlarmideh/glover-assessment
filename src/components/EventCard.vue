@@ -23,7 +23,7 @@
         <Paragraph class=""
           >Starting from
           <span class="text-blue-900 text-[14px] font-semibold"
-            >#15,000</span
+            >₦15,000</span
           ></Paragraph
         >
       </div>
@@ -47,7 +47,7 @@ export default {
   props: ["title", "location", "link", "date", "source" ],
   methods: {
     formatDate(date) {
-  const options = {   day: 'numeric', month: 'long' }
+  const options = { day: 'numeric', month: 'long' }
   const myDate = new Date(date).toLocaleDateString('en-GB', options)
   return myDate
 },

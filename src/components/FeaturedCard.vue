@@ -35,7 +35,7 @@
             <Paragraph class=""
               >Starting from
               <span class="text-blue-900 text-[14px] font-semibold"
-                >#15,000</span
+                >₦15,000</span
               ></Paragraph
             >
           </div>
